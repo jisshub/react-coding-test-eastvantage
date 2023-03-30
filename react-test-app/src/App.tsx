@@ -11,6 +11,10 @@ import Typography from '@mui/material/Typography';
 // axios
 import axios from 'axios';
 
+type User = {
+  name: any,
+  login: any
+}
 
 const App: React.FC =()=> {
   const [userInfo, setUserInfo] = useState<Object[]>([])
@@ -30,7 +34,7 @@ const App: React.FC =()=> {
   
   return (
     <div className="App">    
-    {userInfo.map((user: {}) => (
+    {userInfo.map((user: Object) => (
       <Card sx={{ minWidth: 345 }} key={user?.login?.uuid}>
         <CardContent>
           <Typography variant="h4" component="div">
