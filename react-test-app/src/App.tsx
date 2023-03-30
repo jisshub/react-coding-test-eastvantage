@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import './App.css'
 
 // material UI
@@ -12,8 +12,8 @@ import Typography from '@mui/material/Typography';
 import axios from 'axios';
 
 
-function App() {
-  const [userInfo, setUserInfo] = useState([])
+const App: React.FC =()=> {
+  const [userInfo, setUserInfo] = useState<Object[]>([])
 
   async function fetchUserInfo(){
     axios.get('https://randomuser.me/api')
@@ -30,8 +30,8 @@ function App() {
   
   return (
     <div className="App">    
-    {userInfo.map((user) => (
-      <Card sx={{ minWidth: 345 }}>
+    {userInfo.map((user: {}) => (
+      <Card sx={{ minWidth: 345 }} key={user?.login?.uuid}>
         <CardContent>
           <Typography variant="h4" component="div">
             {user?.name?.first} {user?.name?.last}
