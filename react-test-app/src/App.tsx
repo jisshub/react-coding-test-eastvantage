@@ -34,14 +34,14 @@ const App: React.FC =()=> {
   
   return (
     <div className="App">    
-    {userInfo.map((user: Object) => (
-      <Card sx={{ minWidth: 345 }} key={user?.login?.uuid}>
+    {userInfo.map((user: any) => (
+      <Card sx={{ minWidth: 345 }} key={user.login?.uuid}>
         <CardContent>
           <Typography variant="h4" component="div">
-            {user?.name?.first} {user?.name?.last}
+            {user.name?.first} {user.name?.last}
           </Typography>
           <Typography sx={{ mb: 1.5 }} color="text.secondary">
-            {user?.email}
+            {user.email}
           </Typography>
         </CardContent>
         <CardActions className='card-action'>
